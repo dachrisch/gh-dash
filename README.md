@@ -1,18 +1,18 @@
 # GitHub Dashboard
 
 Auto-generated overview of repositories tagged with `gh-dash`.
-Last updated: 2026-06-03 23:09:22 UTC
+Last updated: 2026-06-03 23:13:02 UTC
 
 <table border="0" width="100%">
   <tr>
     <td width="33%" align="left" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 12px;">
       <a href="https://github.com/dachrisch/leaguesphere"><b>dachrisch/leaguesphere</b></a><br>
       <hr style="border: 0; border-top: 1px solid #30363d; margin: 8px 0;">
-      <p style="margin: 4px 0;">Health: 🟣 **ON HOLD**</p>
+      <p style="margin: 4px 0;">Health: 🟡 **BUILDING**</p>
       <p style="margin: 4px 0;">PRs: ⚓ 0</p>
       <p style="margin: 12px 0;">
-        <a href="https://app.circleci.com/pipelines/github/dachrisch/leaguesphere">
-          <img src="https://img.shields.io/badge/ACTION-Approve Deployment-orange?style=for-the-badge" alt="action">
+        <a href="https://github.com/dachrisch/leaguesphere/actions">
+          <img src="https://img.shields.io/badge/ACTION-View Progress-orange?style=for-the-badge" alt="action">
         </a>
       </p>
       <div style="margin-top: 10px;">

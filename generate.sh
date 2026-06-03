@@ -25,32 +25,41 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
   
   echo "Processing repository: $name (branch: $branch)" >&2
 
-  # 1. Fetch CI Status and check for 'hold'
+  # 1. Fetch CI Status and check for details
   ci_json=$(gh api repos/$name/commits/$branch/status 2>/dev/null || echo "{}")
   ci_state=$(echo "$ci_json" | jq -r '.state // "unknown"')
-  has_hold=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "pending" and (.context | contains("hold"))) | .context' | head -n 1)
   
+  # Find first failure or first hold
+  failed_ctx=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "failure") | .context' | head -n 1)
+  failed_url=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "failure") | .target_url' | head -n 1)
+  
+  hold_ctx=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "pending" and (.context | contains("hold"))) | .context' | head -n 1)
+  hold_url=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "pending" and (.context | contains("hold"))) | .target_url' | head -n 1)
+
   # 2. Fetch PRs and check for conflicts
   pr_json=$(gh pr list --repo "$name" --state open --json number,url,mergeable 2>/dev/null || echo "[]")
   pr_count=$(echo "$pr_json" | jq 'length')
-  conflicts=$(echo "$pr_json" | jq -r '.[] | select(.mergeable == "CONFLICTING") | .url' | head -n 1)
+  conflicts_url=$(echo "$pr_json" | jq -r '.[] | select(.mergeable == "CONFLICTING") | .url' | head -n 1)
 
   # 3. Compute Health Indicator and Action Link
   action_label=""
   action_url=""
 
-  if [ "$ci_state" == "failure" ]; then
+  if [ -n "$failed_ctx" ]; then
     health="🔴 **FAILED**"
-    action_label="Fix CI"
-    action_url="$url/actions"
-  elif [ -n "$conflicts" ]; then
+    # Strip common prefixes for cleaner label
+    short_ctx=$(echo "$failed_ctx" | sed 's#ci/circleci: ##; s#build_test_deploy/##')
+    action_label="Fix $short_ctx"
+    action_url="${failed_url:-$url/actions}"
+  elif [ -n "$conflicts_url" ]; then
     health="🔴 **CONFLICT**"
     action_label="Resolve Conflicts"
-    action_url="$conflicts"
-  elif [ -n "$has_hold" ]; then
+    action_url="$conflicts_url"
+  elif [ -n "$hold_ctx" ]; then
     health="🟣 **ON HOLD**"
-    action_label="Approve Deployment"
-    action_url="https://app.circleci.com/pipelines/github/$name"
+    short_ctx=$(echo "$hold_ctx" | sed 's#ci/circleci: ##; s#build_test_deploy/##')
+    action_label="Approve $short_ctx"
+    action_url="${hold_url:-https://app.circleci.com/pipelines/github/$name}"
   elif [ "$ci_state" == "pending" ]; then
     health="🟡 **BUILDING**"
     action_label="View Progress"
