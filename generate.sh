@@ -106,8 +106,7 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="$url/commits/$branch"><img src="$commit_age_badge" alt="commit"></a><br>
-        <a href="$url/pulls"><img src="$pr_badge" alt="prs"></a>$([ -n "$pr_age_short" ] && echo " <img src=\"$pr_age_badge\" alt=\"pr-age\">")<br>
+        <a href="$url/commits/$branch"><img src="$commit_age_badge" alt="commit"></a> ✳️ <a href="$url/pulls"><img src="$pr_badge" alt="prs"></a>$([ -n "$pr_age_short" ] && echo " <img src=\"$pr_age_badge\" alt=\"pr-age\">")<br>
         <a href="$url/releases"><img src="$tag_badge" alt="tag"></a>$([ -n "$tag_age_short" ] && echo " <img src=\"$tag_age_badge\" alt=\"tag-age\">")
       </div>
     </td>
