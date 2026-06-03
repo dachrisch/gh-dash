@@ -82,8 +82,8 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
   pr_badge="https://img.shields.io/github/issues-pr/$name?label=prs&style=flat-square"
   
   # Custom age badges
-  pr_age_badge="https://img.shields.io/badge/latest-${pr_age_human// /%20}-gray?style=flat-square"
-  tag_age_badge="https://img.shields.io/badge/last-${tag_age_human// /%20}-gray?style=flat-square"
+  pr_age_badge="https://img.shields.io/badge/${pr_age_human// /%20}-gray?style=flat-square"
+  tag_age_badge="https://img.shields.io/badge/${tag_age_human// /%20}-gray?style=flat-square"
 
   # Output Card
   cat <<CARD
