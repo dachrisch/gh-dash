@@ -1,7 +1,7 @@
 # GitHub Dashboard
 
 Auto-generated overview of repositories tagged with `gh-dash`.
-Last updated: 2026-06-03 23:43:29 UTC
+Last updated: 2026-06-03 23:47:03 UTC
 
 <table border="0" width="100%">
   <tr>
@@ -14,8 +14,8 @@ Last updated: 2026-06-03 23:43:29 UTC
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/leaguesphere/commits/master"><img src="https://img.shields.io/badge/commit-48m-green?style=flat-square" alt="commit"></a> ✳️ <a href="https://github.com/dachrisch/leaguesphere/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/leaguesphere?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/52m-gray?style=flat-square" alt="pr-age"><br>
-        <a href="https://github.com/dachrisch/leaguesphere/releases"><img src="https://img.shields.io/github/v/release/dachrisch/leaguesphere?label=tag&style=flat-square&color=blue" alt="tag"></a> <img src="https://img.shields.io/badge/49m-gray?style=flat-square" alt="tag-age">
+        <a href="https://github.com/dachrisch/leaguesphere/commits/master"><img src="https://img.shields.io/badge/commit-52m-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/leaguesphere/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/leaguesphere?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/56m-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/dachrisch/leaguesphere/releases"><img src="https://img.shields.io/github/v/release/dachrisch/leaguesphere?label=tag&style=flat-square&color=blue" alt="tag"></a> <img src="https://img.shields.io/badge/52m-gray?style=flat-square" alt="tag-age">
       </div>
     </td>
   </tr>
