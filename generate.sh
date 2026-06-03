@@ -8,8 +8,7 @@ cat <<EOF
 Auto-generated overview of repositories tagged with \`gh-dash\`.
 Last updated: $(date -u +"%Y-%m-%d %H:%M:%S UTC")
 
-| Repository | Status | PRs | Release | Commit | Released | Security |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+<table width="100%">
 EOF
 
 # Fetch repos with topic gh-dash
@@ -18,32 +17,43 @@ repos=$(gh repo list --topic gh-dash --json nameWithOwner,url,defaultBranchRef -
 count=$(echo "$repos" | jq 'length')
 echo "Found $count repositories." >&2
 
+i=0
 echo "$repos" | jq -c '.[]' | while read -r repo; do
   name=$(echo "$repo" | jq -r '.nameWithOwner')
   url=$(echo "$repo" | jq -r '.url')
   branch=$(echo "$repo" | jq -r '.defaultBranchRef.name // "main"')
   
+  # Start new row every 3 items
+  if [ $((i % 3)) -eq 0 ]; then
+    [ $i -gt 0 ] && echo "  </tr>"
+    echo "  <tr>"
+  fi
+
   echo "Processing repository: $name (branch: $branch)" >&2
 
   # Shields.io Badges
-  # Status: Combined Checks Status
-  status_badge="![Status](https://img.shields.io/github/checks-status/$name/$branch?label=status)"
-  
-  # PRs: Open PRs count
-  pr_badge="![PRs](https://img.shields.io/github/issues-pr/$name?label=prs)"
-  
-  # Release: Latest Release tag
-  rel_badge="![Release](https://img.shields.io/github/v/release/$name?label=tag&sort=semver)"
+  status_badge="https://img.shields.io/github/checks-status/$name/$branch?label=status"
+  pr_badge="https://img.shields.io/github/issues-pr/$name?label=prs"
+  rel_badge="https://img.shields.io/github/v/release/$name?label=tag&sort=semver"
+  commit_badge="https://img.shields.io/github/last-commit/$name?label="
+  reldate_badge="https://img.shields.io/github/release-date/$name?label="
+  sec_badge="https://img.shields.io/github/code-scanning/alerts/$name?label="
 
-  # Last Commit: Relative time
-  commit_badge="![Last Commit](https://img.shields.io/github/last-commit/$name?label=)"
+  # Output Card (Table Cell)
+  cat <<CARD
+    <td width="33%" align="center" valign="top">
+      <h4><a href="$url">$name</a></h4>
+      <img src="$status_badge" alt="status"><br>
+      <img src="$pr_badge" alt="prs"> <img src="$rel_badge" alt="release"><br>
+      <img src="$commit_badge" alt="last-commit"><br>
+      <img src="$reldate_badge" alt="release-date"><br>
+      <img src="$sec_badge" alt="security">
+    </td>
+CARD
 
-  # Release Date: Date of last release
-  reldate_badge="![Release Date](https://img.shields.io/github/release-date/$name?label=)"
-
-  # Security: Code scanning alerts (requires setup in the repo)
-  sec_badge="![Security](https://img.shields.io/github/code-scanning/alerts/$name?label=)"
-
-  # Output Table Row
-  echo "| [$name]($url) | $status_badge | $pr_badge | $rel_badge | $commit_badge | $reldate_badge | $sec_badge |"
+  i=$((i + 1))
 done
+
+# Close table
+echo "  </tr>"
+echo "</table>"
