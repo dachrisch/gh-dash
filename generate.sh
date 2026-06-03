@@ -90,7 +90,7 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
       <a href="$url"><b>$name</b></a><br>
       <hr style="border: 0; border-top: 1px solid #30363d; margin: 8px 0;">
       <p style="margin: 4px 0;">Health: $health</p>
-      <p style="margin: 4px 0;">PRs: ⚓ $pr_count</p>
+      <p style="margin: 4px 0;"><img src="https://img.shields.io/github/issues-pr/$name?label=prs&style=flat-square" alt="prs"></p>
       <p style="margin: 12px 0;">
         <a href="$action_url">
           <img src="https://img.shields.io/badge/ACTION-$action_label-orange?style=for-the-badge" alt="action">
