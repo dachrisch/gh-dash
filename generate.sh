@@ -29,6 +29,7 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
   ci_json=$(gh api repos/$name/commits/$branch/status 2>/dev/null || echo "{}")
   ci_state=$(echo "$ci_json" | jq -r '.state // "unknown"')
   
+  # Find first failure or first hold
   failed_ctx=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "failure") | .context' | head -n 1)
   failed_url=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "failure") | .target_url' | head -n 1)
   
@@ -36,18 +37,12 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
   hold_url=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "pending" and (.context | contains("hold"))) | .target_url' | head -n 1)
 
   # 2. Fetch PRs and check for conflicts/age
-  pr_json=$(gh pr list --repo "$name" --state open --json number,url,mergeable,createdAt --limit 1 2>/dev/null || echo "[]")
-  pr_count=$(gh pr list --repo "$name" --state open --json number 2>/dev/null | jq 'length')
-  pr_age=$(echo "$pr_json" | jq -r '.[0].createdAt // empty')
-  if [ -n "$pr_age" ]; then
-    pr_age_human=$(gh pr list --repo "$name" --limit 1 --template '{{timeago .createdAt}}' 2>/dev/null || echo "")
-  else
-    pr_age_human=""
-  fi
-  conflicts_url=$(echo "$pr_json" | jq -r '.[] | select(.mergeable == "CONFLICTING") | .url' | head -n 1)
+  pr_count=$(gh pr list --repo "$name" --state open --json number --limit 100 2>/dev/null | jq 'length')
+  pr_age_human=$(gh pr list --repo "$name" --state all --limit 1 --json createdAt --template '{{range .}}{{timeago .createdAt}}{{end}}' 2>/dev/null || echo "")
+  conflicts_url=$(gh pr list --repo "$name" --state open --json url,mergeable 2>/dev/null | jq -r '.[] | select(.mergeable == "CONFLICTING") | .url' | head -n 1)
 
   # 3. Fetch Tag age
-  tag_age_human=$(gh release list --repo "$name" --limit 1 --template '{{timeago .createdAt}}' 2>/dev/null || echo "")
+  tag_age_human=$(gh release list --repo "$name" --limit 1 --json createdAt --template '{{range .}}{{timeago .createdAt}}{{end}}' 2>/dev/null || echo "")
 
   # 4. Compute Action Link
   action_label=""
@@ -102,8 +97,8 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
       </p>
       <div style="margin-top: 10px;">
         <a href="$url/commits/$branch"><img src="$commit_badge" alt="commit"></a><br>
-        <a href="$url/pulls"><img src="$pr_badge" alt="prs"></a> $([ -n "$pr_age_human" ] && echo "<img src=\"$pr_age_badge\" alt=\"pr-age\">")<br>
-        <a href="$url/releases"><img src="$tag_badge" alt="tag"></a> $([ -n "$tag_age_human" ] && echo "<img src=\"$tag_age_badge\" alt=\"tag-age\">")
+        <a href="$url/pulls"><img src="$pr_badge" alt="prs"></a>$([ -n "$pr_age_human" ] && echo " <img src=\"$pr_age_badge\" alt=\"pr-age\">")<br>
+        <a href="$url/releases"><img src="$tag_badge" alt="tag"></a>$([ -n "$tag_age_human" ] && echo " <img src=\"$tag_age_badge\" alt=\"tag-age\">")
       </div>
     </td>
 CARD
