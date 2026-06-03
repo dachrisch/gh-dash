@@ -29,19 +29,27 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
   ci_json=$(gh api repos/$name/commits/$branch/status 2>/dev/null || echo "{}")
   ci_state=$(echo "$ci_json" | jq -r '.state // "unknown"')
   
-  # Find first failure or first hold
   failed_ctx=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "failure") | .context' | head -n 1)
   failed_url=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "failure") | .target_url' | head -n 1)
   
   hold_ctx=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "pending" and (.context | contains("hold"))) | .context' | head -n 1)
   hold_url=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "pending" and (.context | contains("hold"))) | .target_url' | head -n 1)
 
-  # 2. Fetch PRs and check for conflicts
-  pr_json=$(gh pr list --repo "$name" --state open --json number,url,mergeable 2>/dev/null || echo "[]")
-  pr_count=$(echo "$pr_json" | jq 'length')
+  # 2. Fetch PRs and check for conflicts/age
+  pr_json=$(gh pr list --repo "$name" --state open --json number,url,mergeable,createdAt --limit 1 2>/dev/null || echo "[]")
+  pr_count=$(gh pr list --repo "$name" --state open --json number 2>/dev/null | jq 'length')
+  pr_age=$(echo "$pr_json" | jq -r '.[0].createdAt // empty')
+  if [ -n "$pr_age" ]; then
+    pr_age_human=$(gh pr list --repo "$name" --limit 1 --template '{{timeago .createdAt}}' 2>/dev/null || echo "")
+  else
+    pr_age_human=""
+  fi
   conflicts_url=$(echo "$pr_json" | jq -r '.[] | select(.mergeable == "CONFLICTING") | .url' | head -n 1)
 
-  # 3. Compute Action Link
+  # 3. Fetch Tag age
+  tag_age_human=$(gh release list --repo "$name" --limit 1 --template '{{timeago .createdAt}}' 2>/dev/null || echo "")
+
+  # 4. Compute Action Link
   action_label=""
   action_url=""
 
@@ -73,10 +81,14 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
     echo "  <tr>"
   fi
 
-  # Badges for specific metadata
+  # Badges
   tag_badge="https://img.shields.io/github/v/release/$name?label=tag&style=flat-square&color=blue"
   commit_badge="https://img.shields.io/github/last-commit/$name?label=commit&style=flat-square&color=green"
   pr_badge="https://img.shields.io/github/issues-pr/$name?label=prs&style=flat-square"
+  
+  # Custom age badges
+  pr_age_badge="https://img.shields.io/badge/latest-${pr_age_human// /%20}-gray?style=flat-square"
+  tag_age_badge="https://img.shields.io/badge/last-${tag_age_human// /%20}-gray?style=flat-square"
 
   # Output Card
   cat <<CARD
@@ -89,9 +101,9 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="$url/pulls"><img src="$pr_badge" alt="prs"></a><br>
-        <a href="$url/releases"><img src="$tag_badge" alt="tag"></a><br>
-        <a href="$url/commits/$branch"><img src="$commit_badge" alt="commit"></a>
+        <a href="$url/commits/$branch"><img src="$commit_badge" alt="commit"></a><br>
+        <a href="$url/pulls"><img src="$pr_badge" alt="prs"></a> $([ -n "$pr_age_human" ] && echo "<img src=\"$pr_age_badge\" alt=\"pr-age\">")<br>
+        <a href="$url/releases"><img src="$tag_badge" alt="tag"></a> $([ -n "$tag_age_human" ] && echo "<img src=\"$tag_age_badge\" alt=\"tag-age\">")
       </div>
     </td>
 CARD
