@@ -8,8 +8,8 @@ cat <<EOF
 Auto-generated overview of repositories tagged with \`gh-dash\`.
 Last updated: $(date -u +"%Y-%m-%d %H:%M:%S UTC")
 
-| Repository | Status | PRs | Release |
-| :--- | :---: | :---: | :---: |
+| Repository | Status | PRs | Release | Commit | Released | Security |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 EOF
 
 # Fetch repos with topic gh-dash
@@ -33,8 +33,17 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
   pr_badge="![PRs](https://img.shields.io/github/issues-pr/$name?label=prs)"
   
   # Release: Latest Release tag
-  rel_badge="![Release](https://img.shields.io/github/v/release/$name?label=release&sort=semver)"
+  rel_badge="![Release](https://img.shields.io/github/v/release/$name?label=tag&sort=semver)"
+
+  # Last Commit: Relative time
+  commit_badge="![Last Commit](https://img.shields.io/github/last-commit/$name?label=)"
+
+  # Release Date: Date of last release
+  reldate_badge="![Release Date](https://img.shields.io/github/release-date/$name?label=)"
+
+  # Security: Code scanning alerts (requires setup in the repo)
+  sec_badge="![Security](https://img.shields.io/github/code-scanning/alerts/$name?label=)"
 
   # Output Table Row
-  echo "| [$name]($url) | $status_badge | $pr_badge | $rel_badge |"
+  echo "| [$name]($url) | $status_badge | $pr_badge | $rel_badge | $commit_badge | $reldate_badge | $sec_badge |"
 done
