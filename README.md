@@ -1,7 +1,7 @@
 # GitHub Dashboard
 
 Auto-generated overview of repositories tagged with `gh-dash`.
-Last updated: 2026-06-04 10:56:32 UTC
+Last updated: 2026-06-04 11:19:09 UTC
 
 <table border="0" width="100%">
   <tr>
@@ -50,8 +50,8 @@ Last updated: 2026-06-04 10:56:32 UTC
       <a href="https://github.com/dachrisch/leaguesphere"><b>dachrisch/leaguesphere</b></a><br>
       <hr style="border: 0; border-top: 1px solid #30363d; margin: 8px 0;">
       <p style="margin: 12px 0;">
-        <a href="https://circleci.com/workflow-run/f74b9c9c-25ae-4f5e-ae44-9deae00763ab">
-          <img src="https://img.shields.io/badge/ACTION-APPROVE hold_production-blueviolet?style=for-the-badge" alt="action">
+        <a href="https://github.com/dachrisch/leaguesphere">
+          <img src="https://img.shields.io/badge/ACTION-ALL DONE-green?style=for-the-badge" alt="action">
         </a>
       </p>
       <div style="margin-top: 10px;">
