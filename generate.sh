@@ -103,12 +103,22 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
   commit_age_human=$(gh repo view "$name" --json pushedAt --template '{{timeago .pushedAt}}' 2>/dev/null || echo "")
   commit_age_short=$(abbreviate "$commit_age_human")
 
-  # 5. Compute Action Link
+  # 5. Fetch Security Alerts
+  dependabot_count=$(gh api "repos/$name/dependabot/alerts" -f state=open 2>/dev/null | jq 'if type=="array" then length else 0 end' 2>/dev/null | head -n 1 | tr -dc '0-9' || echo "0")
+  code_scanning_count=$(gh api "repos/$name/code-scanning/alerts" -f state=open 2>/dev/null | jq 'if type=="array" then length else 0 end' 2>/dev/null | head -n 1 | tr -dc '0-9' || echo "0")
+  secret_scanning_count=$(gh api "repos/$name/secret-scanning/alerts" 2>/dev/null | jq 'if type=="array" then length else 0 end' 2>/dev/null | head -n 1 | tr -dc '0-9' || echo "0")
+  total_security_alerts=$(( ${dependabot_count:-0} + ${code_scanning_count:-0} + ${secret_scanning_count:-0} ))
+
+  # 6. Compute Action Link
   action_label=""
   action_url=""
   action_color="orange"
 
-  if [ "$ci_state" == "failure" ] || [ -n "$failed_ctx" ]; then
+  if [ "$total_security_alerts" -gt 0 ]; then
+    action_label="FIX SECURITY ($total_security_alerts)"
+    action_url="$url/security"
+    action_color="red"
+  elif [ "$ci_state" == "failure" ] || [ -n "$failed_ctx" ]; then
     short_ctx=$(echo "${failed_ctx:-CI}" | sed 's#ci/circleci: ##; s#build_test_deploy/##')
     action_label="FIX $short_ctx"
     action_url="${failed_url:-$url/actions}"
@@ -146,6 +156,10 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
   pr_badge="https://img.shields.io/github/issues-pr/$name?label=prs&style=flat-square"
   commit_age_badge="https://img.shields.io/badge/commit-${commit_age_short// /%20}-green?style=flat-square"
   pr_age_badge="https://img.shields.io/badge/${pr_age_short// /%20}-gray?style=flat-square"
+  security_badge="https://img.shields.io/badge/security-none-green?style=flat-square"
+  if [ "$total_security_alerts" -gt 0 ]; then
+    security_badge="https://img.shields.io/badge/security-${total_security_alerts}-red?style=flat-square"
+  fi
 
   # Output Card
   cat <<CARD
@@ -159,7 +173,7 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
       </p>
       <div style="margin-top: 10px;">
         <a href="$url/commits/$branch"><img src="$commit_age_badge" alt="commit"></a> ˙ <a href="$url/pulls"><img src="$pr_badge" alt="prs"></a>$([ -n "$pr_age_short" ] && echo " <img src=\"$pr_age_badge\" alt=\"pr-age\">")<br>
-        <a href="$url/releases"><img src="$rel_badge" alt="release"></a>$([ -n "$rel_age_short" ] && echo " <img src=\"$rel_age_badge\" alt=\"release-age\">")
+        <a href="$url/releases"><img src="$rel_badge" alt="release"></a>$([ -n "$rel_age_short" ] && echo " <img src=\"$rel_age_badge\" alt=\"release-age\">") ˙ <a href="$url/security"><img src="$security_badge" alt="security"></a>
       </div>
     </td>
 CARD
