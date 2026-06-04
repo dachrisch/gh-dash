@@ -26,7 +26,7 @@ if [ -z "$owner" ]; then
 fi
 
 orgs=$(gh api user/orgs --jq '.[].login' 2>/dev/null || echo "")
-targets=$(echo -e "$owner\n$orgs" | sort -u | grep -v '^$')
+targets=$(echo -e "$owner\n$orgs\nbumbleflies" | sort -u | grep -v '^$')
 
 repos="[]"
 for target in $targets; do
