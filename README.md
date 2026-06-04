@@ -1,7 +1,7 @@
 # GitHub Dashboard
 
 Auto-generated overview of repositories tagged with `gh-dash`.
-Last updated: 2026-06-04 00:10:17 UTC
+Last updated: 2026-06-04 00:13:07 UTC
 
 <table border="0" width="100%">
   <tr>
@@ -14,7 +14,7 @@ Last updated: 2026-06-04 00:10:17 UTC
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/leaguesphere/commits/master"><img src="https://img.shields.io/badge/commit-1h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/leaguesphere/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/leaguesphere?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/1h-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/dachrisch/leaguesphere/commits/master"><img src="https://img.shields.io/badge/commit-just%20now-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/leaguesphere/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/leaguesphere?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/1h-gray?style=flat-square" alt="pr-age"><br>
         <a href="https://github.com/dachrisch/leaguesphere/releases"><img src="https://img.shields.io/github/v/release/dachrisch/leaguesphere?label=tag&style=flat-square&color=blue" alt="tag"></a> <img src="https://img.shields.io/badge/1h-gray?style=flat-square" alt="tag-age">
       </div>
     </td>
@@ -22,8 +22,8 @@ Last updated: 2026-06-04 00:10:17 UTC
       <a href="https://github.com/dachrisch/ai-job-search"><b>dachrisch/ai-job-search</b></a><br>
       <hr style="border: 0; border-top: 1px solid #30363d; margin: 8px 0;">
       <p style="margin: 12px 0;">
-        <a href="https://github.com/dachrisch/ai-job-search/actions">
-          <img src="https://img.shields.io/badge/ACTION-CI RUNNING-yellow?style=for-the-badge" alt="action">
+        <a href="https://github.com/dachrisch/ai-job-search">
+          <img src="https://img.shields.io/badge/ACTION-ALL DONE-green?style=for-the-badge" alt="action">
         </a>
       </p>
       <div style="margin-top: 10px;">
@@ -38,7 +38,7 @@ Last updated: 2026-06-04 00:10:17 UTC
       <hr style="border: 0; border-top: 1px solid #30363d; margin: 8px 0;">
       <p style="margin: 12px 0;">
         <a href="https://github.com/dachrisch/wtf/actions">
-          <img src="https://img.shields.io/badge/ACTION-CI RUNNING-yellow?style=for-the-badge" alt="action">
+          <img src="https://img.shields.io/badge/ACTION-FIX build-red?style=for-the-badge" alt="action">
         </a>
       </p>
       <div style="margin-top: 10px;">
@@ -50,8 +50,8 @@ Last updated: 2026-06-04 00:10:17 UTC
       <a href="https://github.com/dachrisch/groceries-order-tracking"><b>dachrisch/groceries-order-tracking</b></a><br>
       <hr style="border: 0; border-top: 1px solid #30363d; margin: 8px 0;">
       <p style="margin: 12px 0;">
-        <a href="https://github.com/dachrisch/groceries-order-tracking/actions">
-          <img src="https://img.shields.io/badge/ACTION-CI RUNNING-yellow?style=for-the-badge" alt="action">
+        <a href="https://github.com/dachrisch/groceries-order-tracking">
+          <img src="https://img.shields.io/badge/ACTION-ALL DONE-green?style=for-the-badge" alt="action">
         </a>
       </p>
       <div style="margin-top: 10px;">
@@ -65,8 +65,8 @@ Last updated: 2026-06-04 00:10:17 UTC
       <a href="https://github.com/dachrisch/freetz-ng"><b>dachrisch/freetz-ng</b></a><br>
       <hr style="border: 0; border-top: 1px solid #30363d; margin: 8px 0;">
       <p style="margin: 12px 0;">
-        <a href="https://github.com/dachrisch/freetz-ng/actions">
-          <img src="https://img.shields.io/badge/ACTION-CI RUNNING-yellow?style=for-the-badge" alt="action">
+        <a href="https://github.com/dachrisch/freetz-ng">
+          <img src="https://img.shields.io/badge/ACTION-ALL DONE-green?style=for-the-badge" alt="action">
         </a>
       </p>
       <div style="margin-top: 10px;">
@@ -78,8 +78,8 @@ Last updated: 2026-06-04 00:10:17 UTC
       <a href="https://github.com/dachrisch/job_management"><b>dachrisch/job_management</b></a><br>
       <hr style="border: 0; border-top: 1px solid #30363d; margin: 8px 0;">
       <p style="margin: 12px 0;">
-        <a href="https://github.com/dachrisch/job_management/actions">
-          <img src="https://img.shields.io/badge/ACTION-CI RUNNING-yellow?style=for-the-badge" alt="action">
+        <a href="https://github.com/dachrisch/job_management">
+          <img src="https://img.shields.io/badge/ACTION-ALL DONE-green?style=for-the-badge" alt="action">
         </a>
       </p>
       <div style="margin-top: 10px;">

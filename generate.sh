@@ -30,16 +30,35 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
   
   echo "Processing repository: $name (branch: $branch)" >&2
 
-  # 1. Fetch CI Status and check for details
+  # 1. Fetch CI Status
+  # We check BOTH the Status API (older, CircleCI/external) AND the Check Runs API (modern, Actions)
   ci_json=$(gh api repos/$name/commits/$branch/status 2>/dev/null || echo "{}")
   ci_state=$(echo "$ci_json" | jq -r '.state // "unknown"')
   
-  # Find first failure or first hold
+  # Fetch check runs summary
+  check_runs_json=$(gh api repos/$name/commits/$branch/check-runs 2>/dev/null || echo "{}")
+  check_runs_total=$(echo "$check_runs_json" | jq -r '.total_count // 0')
+  check_runs_failing=$(echo "$check_runs_json" | jq -r '[.check_runs[]? | select(.conclusion == "failure" or .conclusion == "timed_out")] | length')
+  check_runs_pending=$(echo "$check_runs_json" | jq -r '[.check_runs[]? | select(.status != "completed")] | length')
+
+  # Detailed CI Analysis
   failed_ctx=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "failure") | .context' | head -n 1)
   failed_url=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "failure") | .target_url' | head -n 1)
   
+  # If Status API is success/pending but Check Runs show failure, override
+  if [ "$check_runs_failing" -gt 0 ]; then
+    failed_ctx=$(echo "$check_runs_json" | jq -r '.check_runs[]? | select(.conclusion == "failure") | .name' | head -n 1)
+    failed_url="$url/actions" # Best guess for Actions failure
+    ci_state="failure"
+  fi
+
   hold_ctx=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "pending" and (.context | contains("hold"))) | .context' | head -n 1)
   hold_url=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "pending" and (.context | contains("hold"))) | .target_url' | head -n 1)
+
+  # Check for actual running Actions
+  if [ "$check_runs_pending" -gt 0 ]; then
+    ci_state="pending"
+  fi
 
   # 2. Fetch PRs and check for conflicts/age
   pr_count=$(gh pr list --repo "$name" --state open --json number --limit 100 2>/dev/null | jq 'length')
@@ -60,8 +79,8 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
   action_url=""
   action_color="orange"
 
-  if [ -n "$failed_ctx" ]; then
-    short_ctx=$(echo "$failed_ctx" | sed 's#ci/circleci: ##; s#build_test_deploy/##')
+  if [ "$ci_state" == "failure" ] || [ -n "$failed_ctx" ]; then
+    short_ctx=$(echo "${failed_ctx:-CI}" | sed 's#ci/circleci: ##; s#build_test_deploy/##')
     action_label="FIX $short_ctx"
     action_url="${failed_url:-$url/actions}"
     action_color="red"
@@ -74,7 +93,7 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
     action_label="APPROVE $short_ctx"
     action_url="${hold_url:-https://app.circleci.com/pipelines/github/$name}"
     action_color="blueviolet"
-  elif [ "$ci_state" == "pending" ]; then
+  elif [ "$ci_state" == "pending" ] && ([ "$check_runs_pending" -gt 0 ] || [ "$ci_json" != "{}" -a "$(echo "$ci_json" | jq -r '.statuses | length')" -gt 0 ]); then
     action_label="CI RUNNING"
     action_url="$url/actions"
     action_color="yellow"
