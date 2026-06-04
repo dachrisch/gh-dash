@@ -1,7 +1,7 @@
 # GitHub Dashboard
 
 Auto-generated overview of repositories tagged with `gh-dash`.
-Last updated: 2026-06-04 11:57:10 UTC
+Last updated: 2026-06-04 12:38:22 UTC
 
 <table border="0" width="100%">
   <tr>
@@ -27,7 +27,7 @@ Last updated: 2026-06-04 11:57:10 UTC
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/bumbleflies/web/commits/master"><img src="https://img.shields.io/badge/commit-10h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/web/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/web?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/10h-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/bumbleflies/web/commits/master"><img src="https://img.shields.io/badge/commit-10h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/web/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/web?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/11h-gray?style=flat-square" alt="pr-age"><br>
         <a href="https://github.com/bumbleflies/web/releases"><img src="https://img.shields.io/badge/release-none-gray?style=flat-square" alt="release"></a>
       </div>
     </td>
@@ -42,7 +42,7 @@ Last updated: 2026-06-04 11:57:10 UTC
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/gh-dash/commits/main"><img src="https://img.shields.io/badge/commit-just%20now-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/gh-dash/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/gh-dash?label=prs&style=flat-square" alt="prs"></a><br>
+        <a href="https://github.com/dachrisch/gh-dash/commits/main"><img src="https://img.shields.io/badge/commit-40m-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/gh-dash/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/gh-dash?label=prs&style=flat-square" alt="prs"></a><br>
         <a href="https://github.com/dachrisch/gh-dash/releases"><img src="https://img.shields.io/badge/release-none-gray?style=flat-square" alt="release"></a>
       </div>
     </td>
@@ -50,12 +50,12 @@ Last updated: 2026-06-04 11:57:10 UTC
       <a href="https://github.com/dachrisch/leaguesphere"><b>dachrisch/leaguesphere</b></a><br>
       <hr style="border: 0; border-top: 1px solid #30363d; margin: 8px 0;">
       <p style="margin: 12px 0;">
-        <a href="https://github.com/dachrisch/leaguesphere">
-          <img src="https://img.shields.io/badge/ACTION-ALL DONE-green?style=for-the-badge" alt="action">
+        <a href="https://github.com/dachrisch/leaguesphere/pulls">
+          <img src="https://img.shields.io/badge/ACTION-REVIEW PRS-blue?style=for-the-badge" alt="action">
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/leaguesphere/commits/master"><img src="https://img.shields.io/badge/commit-2h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/leaguesphere/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/leaguesphere?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/10h-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/dachrisch/leaguesphere/commits/master"><img src="https://img.shields.io/badge/commit-26m-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/leaguesphere/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/leaguesphere?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/26m-gray?style=flat-square" alt="pr-age"><br>
         <a href="https://github.com/dachrisch/leaguesphere/releases"><img src="https://img.shields.io/badge/release-v3.25.0-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/2h-gray?style=flat-square" alt="release-age">
       </div>
     </td>
