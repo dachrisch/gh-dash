@@ -104,9 +104,17 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
   commit_age_short=$(abbreviate "$commit_age_human")
 
   # 5. Fetch Security Alerts
-  dependabot_count=$(gh api "repos/$name/dependabot/alerts" -f state=open 2>/dev/null | jq 'if type=="array" then length else 0 end' 2>/dev/null | head -n 1 | tr -dc '0-9' || echo "0")
-  code_scanning_count=$(gh api "repos/$name/code-scanning/alerts" -f state=open 2>/dev/null | jq 'if type=="array" then length else 0 end' 2>/dev/null | head -n 1 | tr -dc '0-9' || echo "0")
-  secret_scanning_count=$(gh api "repos/$name/secret-scanning/alerts" 2>/dev/null | jq 'if type=="array" then length else 0 end' 2>/dev/null | head -n 1 | tr -dc '0-9' || echo "0")
+  # Note: Headers are required for some security endpoints to return data correctly
+  # We use query parameters in the URL to be more explicit
+  dependabot_count=$(gh api -H "Accept: application/vnd.github+json" "repos/$name/dependabot/alerts?state=open" 2>/dev/null | jq 'if type=="array" then length else 0 end' 2>/dev/null || echo "0")
+  code_scanning_count=$(gh api -H "Accept: application/vnd.github+json" "repos/$name/code-scanning/alerts?state=open" 2>/dev/null | jq 'if type=="array" then length else 0 end' 2>/dev/null || echo "0")
+  secret_scanning_count=$(gh api -H "Accept: application/vnd.github+json" "repos/$name/secret-scanning/alerts?state=open" 2>/dev/null | jq 'if type=="array" then length else 0 end' 2>/dev/null || echo "0")
+  
+  # Ensure we only have numeric values (strip any potential whitespace/newlines)
+  dependabot_count=$(echo "$dependabot_count" | tr -dc '0-9' | head -n 1)
+  code_scanning_count=$(echo "$code_scanning_count" | tr -dc '0-9' | head -n 1)
+  secret_scanning_count=$(echo "$secret_scanning_count" | tr -dc '0-9' | head -n 1)
+  
   total_security_alerts=$(( ${dependabot_count:-0} + ${code_scanning_count:-0} + ${secret_scanning_count:-0} ))
 
   # 6. Compute Action Link
