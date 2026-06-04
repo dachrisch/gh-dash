@@ -31,31 +31,25 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
   echo "Processing repository: $name (branch: $branch)" >&2
 
   # 1. Fetch CI Status
-  # We check BOTH the Status API (older, CircleCI/external) AND the Check Runs API (modern, Actions)
   ci_json=$(gh api repos/$name/commits/$branch/status 2>/dev/null || echo "{}")
   ci_state=$(echo "$ci_json" | jq -r '.state // "unknown"')
   
-  # Fetch check runs summary
   check_runs_json=$(gh api repos/$name/commits/$branch/check-runs 2>/dev/null || echo "{}")
-  check_runs_total=$(echo "$check_runs_json" | jq -r '.total_count // 0')
   check_runs_failing=$(echo "$check_runs_json" | jq -r '[.check_runs[]? | select(.conclusion == "failure" or .conclusion == "timed_out")] | length')
   check_runs_pending=$(echo "$check_runs_json" | jq -r '[.check_runs[]? | select(.status != "completed")] | length')
 
-  # Detailed CI Analysis
   failed_ctx=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "failure") | .context' | head -n 1)
   failed_url=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "failure") | .target_url' | head -n 1)
   
-  # If Status API is success/pending but Check Runs show failure, override
   if [ "$check_runs_failing" -gt 0 ]; then
     failed_ctx=$(echo "$check_runs_json" | jq -r '.check_runs[]? | select(.conclusion == "failure") | .name' | head -n 1)
-    failed_url="$url/actions" # Best guess for Actions failure
+    failed_url="$url/actions"
     ci_state="failure"
   fi
 
   hold_ctx=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "pending" and (.context | contains("hold"))) | .context' | head -n 1)
   hold_url=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "pending" and (.context | contains("hold"))) | .target_url' | head -n 1)
 
-  # Check for actual running Actions
   if [ "$check_runs_pending" -gt 0 ]; then
     ci_state="pending"
   fi
@@ -66,9 +60,21 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
   pr_age_short=$(abbreviate "$pr_age_human")
   conflicts_url=$(gh pr list --repo "$name" --state open --json url,mergeable 2>/dev/null | jq -r '.[] | select(.mergeable == "CONFLICTING") | .url' | head -n 1)
 
-  # 3. Fetch Tag age
-  tag_age_human=$(gh release list --repo "$name" --limit 1 --json createdAt --template '{{range .}}{{timeago .createdAt}}{{end}}' 2>/dev/null || echo "")
-  tag_age_short=$(abbreviate "$tag_age_human")
+  # 3. Fetch Release info
+  rel_json=$(gh release list --repo "$name" --limit 1 --json tagName,createdAt 2>/dev/null || echo "[]")
+  rel_tag=$(echo "$rel_json" | jq -r '.[0].tagName // empty')
+  
+  if [ -n "$rel_tag" ]; then
+    rel_age_human=$(gh release list --repo "$name" --limit 1 --json createdAt --template '{{range .}}{{timeago .createdAt}}{{end}}' 2>/dev/null || echo "")
+    rel_age_short=$(abbreviate "$rel_age_human")
+    rel_badge="https://img.shields.io/badge/release-${rel_tag//-/--}-blue?style=flat-square"
+    rel_age_badge="https://img.shields.io/badge/${rel_age_short// /%20}-gray?style=flat-square"
+  else
+    rel_tag="none"
+    rel_age_short=""
+    rel_badge="https://img.shields.io/badge/release-none-gray?style=flat-square"
+    rel_age_badge=""
+  fi
 
   # 4. Fetch Commit age
   commit_age_human=$(gh repo view "$name" --json pushedAt --template '{{timeago .pushedAt}}' 2>/dev/null || echo "")
@@ -114,13 +120,9 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
   fi
 
   # Badges
-  tag_badge="https://img.shields.io/github/v/release/$name?label=tag&style=flat-square&color=blue"
   pr_badge="https://img.shields.io/github/issues-pr/$name?label=prs&style=flat-square"
-  
-  # Custom age badges
   commit_age_badge="https://img.shields.io/badge/commit-${commit_age_short// /%20}-green?style=flat-square"
   pr_age_badge="https://img.shields.io/badge/${pr_age_short// /%20}-gray?style=flat-square"
-  tag_age_badge="https://img.shields.io/badge/${tag_age_short// /%20}-gray?style=flat-square"
 
   # Output Card
   cat <<CARD
@@ -134,7 +136,7 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
       </p>
       <div style="margin-top: 10px;">
         <a href="$url/commits/$branch"><img src="$commit_age_badge" alt="commit"></a> ˙ <a href="$url/pulls"><img src="$pr_badge" alt="prs"></a>$([ -n "$pr_age_short" ] && echo " <img src=\"$pr_age_badge\" alt=\"pr-age\">")<br>
-        <a href="$url/releases"><img src="$tag_badge" alt="tag"></a>$([ -n "$tag_age_short" ] && echo " <img src=\"$tag_age_badge\" alt=\"tag-age\">")
+        <a href="$url/releases"><img src="$rel_badge" alt="release"></a>$([ -n "$rel_age_short" ] && echo " <img src=\"$rel_age_badge\" alt=\"release-age\">")
       </div>
     </td>
 CARD
