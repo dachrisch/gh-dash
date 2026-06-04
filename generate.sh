@@ -56,9 +56,11 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
   ci_state=$(echo "$ci_json" | jq -r '.state // "unknown"')
   
   check_runs_json=$(gh api repos/$name/commits/$branch/check-runs 2>/dev/null || echo "{}")
+  # Only count failure and timed_out as failures, ignore cancelled
   check_runs_failing=$(echo "$check_runs_json" | jq -r '[.check_runs[]? | select(.conclusion == "failure" or .conclusion == "timed_out")] | length')
   check_runs_pending=$(echo "$check_runs_json" | jq -r '[.check_runs[]? | select(.status != "completed")] | length')
 
+  # detailed CI analysis - ignore cancelled statuses in Status API
   failed_ctx=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "failure") | .context' | head -n 1)
   failed_url=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "failure") | .target_url' | head -n 1)
   
