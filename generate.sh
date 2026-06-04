@@ -34,6 +34,7 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
   ci_json=$(gh api repos/$name/commits/$branch/status 2>/dev/null || echo "{}")
   ci_state=$(echo "$ci_json" | jq -r '.state // "unknown"')
   
+  # Find first failure or first hold
   failed_ctx=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "failure") | .context' | head -n 1)
   failed_url=$(echo "$ci_json" | jq -r '.statuses[]? | select(.state == "failure") | .target_url' | head -n 1)
   
@@ -57,31 +58,38 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
   # 5. Compute Action Link
   action_label=""
   action_url=""
+  action_color="orange"
 
   if [ -n "$failed_ctx" ]; then
     short_ctx=$(echo "$failed_ctx" | sed 's#ci/circleci: ##; s#build_test_deploy/##')
     action_label="FIX $short_ctx"
     action_url="${failed_url:-$url/actions}"
+    action_color="red"
   elif [ -n "$conflicts_url" ]; then
     action_label="RESOLVE CONFLICTS"
     action_url="$conflicts_url"
+    action_color="red"
   elif [ -n "$hold_ctx" ]; then
     short_ctx=$(echo "$hold_ctx" | sed 's#ci/circleci: ##; s#build_test_deploy/##')
     action_label="APPROVE $short_ctx"
     action_url="${hold_url:-https://app.circleci.com/pipelines/github/$name}"
+    action_color="blueviolet"
   elif [ "$ci_state" == "pending" ]; then
-    action_label="VIEW PROGRESS"
+    action_label="CI RUNNING"
     action_url="$url/actions"
+    action_color="yellow"
   elif [ "$pr_count" -gt 0 ]; then
     action_label="REVIEW PRS"
     action_url="$url/pulls"
+    action_color="blue"
   else
     action_label="ALL DONE"
     action_url="$url"
+    action_color="green"
   fi
 
-  # Start new row every 3 items
-  if [ $((i % 3)) -eq 0 ]; then
+  # Start new row every 2 items
+  if [ $((i % 2)) -eq 0 ]; then
     [ $i -gt 0 ] && echo "  </tr>"
     echo "  <tr>"
   fi
@@ -97,12 +105,12 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
 
   # Output Card
   cat <<CARD
-    <td width="33%" align="left" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 12px;">
+    <td width="50%" align="left" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 12px;">
       <a href="$url"><b>$name</b></a><br>
       <hr style="border: 0; border-top: 1px solid #30363d; margin: 8px 0;">
       <p style="margin: 12px 0;">
         <a href="$action_url">
-          <img src="https://img.shields.io/badge/ACTION-$action_label-orange?style=for-the-badge" alt="action">
+          <img src="https://img.shields.io/badge/ACTION-$action_label-$action_color?style=for-the-badge" alt="action">
         </a>
       </p>
       <div style="margin-top: 10px;">
@@ -116,8 +124,8 @@ CARD
 done
 
 # Fill remaining cells
-while [ $((i % 3)) -ne 0 ]; do
-  echo "    <td width=\"33%\"></td>"
+while [ $((i % 2)) -ne 0 ]; do
+  echo "    <td width=\"50%\"></td>"
   i=$((i + 1))
 done
 
