@@ -1,7 +1,7 @@
 # GitHub Dashboard
 
 Auto-generated overview of repositories tagged with `gh-dash`.
-Last updated: 2026-06-04 01:29:59 UTC
+Last updated: 2026-06-04 01:30:32 UTC
 
 <table border="0" width="100%">
   <tr>
@@ -14,7 +14,7 @@ Last updated: 2026-06-04 01:29:59 UTC
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/bumbleflies/web/commits/master"><img src="https://img.shields.io/badge/commit-just%20now-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/web/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/web?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/just%20now-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/bumbleflies/web/commits/master"><img src="https://img.shields.io/badge/commit-1m-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/web/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/web?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/1m-gray?style=flat-square" alt="pr-age"><br>
         <a href="https://github.com/bumbleflies/web/releases"><img src="https://img.shields.io/badge/release-none-gray?style=flat-square" alt="release"></a>
       </div>
     </td>
@@ -27,7 +27,7 @@ Last updated: 2026-06-04 01:29:59 UTC
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/bumbleflies/bricksnbytes/commits/master"><img src="https://img.shields.io/badge/commit-35m-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/bricksnbytes/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/bricksnbytes?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/35m-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/bumbleflies/bricksnbytes/commits/master"><img src="https://img.shields.io/badge/commit-36m-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/bricksnbytes/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/bricksnbytes?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/36m-gray?style=flat-square" alt="pr-age"><br>
         <a href="https://github.com/bumbleflies/bricksnbytes/releases"><img src="https://img.shields.io/badge/release-none-gray?style=flat-square" alt="release"></a>
       </div>
     </td>
@@ -37,12 +37,12 @@ Last updated: 2026-06-04 01:29:59 UTC
       <a href="https://github.com/dachrisch/gh-dash"><b>dachrisch/gh-dash</b></a><br>
       <hr style="border: 0; border-top: 1px solid #30363d; margin: 8px 0;">
       <p style="margin: 12px 0;">
-        <a href="https://github.com/dachrisch/gh-dash">
-          <img src="https://img.shields.io/badge/ACTION-ALL DONE-green?style=for-the-badge" alt="action">
+        <a href="https://github.com/dachrisch/gh-dash/actions">
+          <img src="https://img.shields.io/badge/ACTION-CI RUNNING-yellow?style=for-the-badge" alt="action">
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/gh-dash/commits/main"><img src="https://img.shields.io/badge/commit-14m-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/gh-dash/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/gh-dash?label=prs&style=flat-square" alt="prs"></a><br>
+        <a href="https://github.com/dachrisch/gh-dash/commits/main"><img src="https://img.shields.io/badge/commit-just%20now-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/gh-dash/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/gh-dash?label=prs&style=flat-square" alt="prs"></a><br>
         <a href="https://github.com/dachrisch/gh-dash/releases"><img src="https://img.shields.io/badge/release-none-gray?style=flat-square" alt="release"></a>
       </div>
     </td>
