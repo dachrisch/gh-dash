@@ -6,6 +6,20 @@ abbreviate() {
   echo "$1" | sed -E 's/ seconds? ago/s/; s/ minutes? ago/m/; s/ hours? ago/h/; s/ days? ago/d/; s/ weeks? ago/w/; s/ months? ago/mo/; s/ years? ago/y/'
 }
 
+# Parse arguments
+ENABLE_SECURITY=false
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    --security)
+      ENABLE_SECURITY=true
+      shift
+      ;;
+    *)
+      shift
+      ;;
+  esac
+done
+
 # Header
 cat <<EOF
 # GitHub Dashboard
@@ -104,18 +118,21 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
   commit_age_short=$(abbreviate "$commit_age_human")
 
   # 5. Fetch Security Alerts
-  # Note: Headers are required for some security endpoints to return data correctly
-  # We use query parameters in the URL to be more explicit
-  dependabot_count=$(gh api -H "Accept: application/vnd.github+json" "repos/$name/dependabot/alerts?state=open" 2>/dev/null | jq 'if type=="array" then length else 0 end' 2>/dev/null || echo "0")
-  code_scanning_count=$(gh api -H "Accept: application/vnd.github+json" "repos/$name/code-scanning/alerts?state=open" 2>/dev/null | jq 'if type=="array" then length else 0 end' 2>/dev/null || echo "0")
-  secret_scanning_count=$(gh api -H "Accept: application/vnd.github+json" "repos/$name/secret-scanning/alerts?state=open" 2>/dev/null | jq 'if type=="array" then length else 0 end' 2>/dev/null || echo "0")
-  
-  # Ensure we only have numeric values (strip any potential whitespace/newlines)
-  dependabot_count=$(echo "$dependabot_count" | tr -dc '0-9' | head -n 1)
-  code_scanning_count=$(echo "$code_scanning_count" | tr -dc '0-9' | head -n 1)
-  secret_scanning_count=$(echo "$secret_scanning_count" | tr -dc '0-9' | head -n 1)
-  
-  total_security_alerts=$(( ${dependabot_count:-0} + ${code_scanning_count:-0} + ${secret_scanning_count:-0} ))
+  total_security_alerts=0
+  if [ "$ENABLE_SECURITY" = true ]; then
+    # Note: Headers are required for some security endpoints to return data correctly
+    # We use query parameters in the URL to be more explicit
+    dependabot_count=$(gh api -H "Accept: application/vnd.github+json" "repos/$name/dependabot/alerts?state=open" 2>/dev/null | jq 'if type=="array" then length else 0 end' 2>/dev/null || echo "0")
+    code_scanning_count=$(gh api -H "Accept: application/vnd.github+json" "repos/$name/code-scanning/alerts?state=open" 2>/dev/null | jq 'if type=="array" then length else 0 end' 2>/dev/null || echo "0")
+    secret_scanning_count=$(gh api -H "Accept: application/vnd.github+json" "repos/$name/secret-scanning/alerts?state=open" 2>/dev/null | jq 'if type=="array" then length else 0 end' 2>/dev/null || echo "0")
+    
+    # Ensure we only have numeric values (strip any potential whitespace/newlines)
+    dependabot_count=$(echo "$dependabot_count" | tr -dc '0-9' | head -n 1)
+    code_scanning_count=$(echo "$code_scanning_count" | tr -dc '0-9' | head -n 1)
+    secret_scanning_count=$(echo "$secret_scanning_count" | tr -dc '0-9' | head -n 1)
+    
+    total_security_alerts=$(( ${dependabot_count:-0} + ${code_scanning_count:-0} + ${secret_scanning_count:-0} ))
+  fi
 
   # 6. Compute Action Link
   action_label=""
@@ -164,9 +181,14 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
   pr_badge="https://img.shields.io/github/issues-pr/$name?label=prs&style=flat-square"
   commit_age_badge="https://img.shields.io/badge/commit-${commit_age_short// /%20}-green?style=flat-square"
   pr_age_badge="https://img.shields.io/badge/${pr_age_short// /%20}-gray?style=flat-square"
-  security_badge="https://img.shields.io/badge/security-none-green?style=flat-square"
-  if [ "$total_security_alerts" -gt 0 ]; then
-    security_badge="https://img.shields.io/badge/security-${total_security_alerts}-red?style=flat-square"
+  
+  security_part=""
+  if [ "$ENABLE_SECURITY" = true ]; then
+    security_badge="https://img.shields.io/badge/security-none-green?style=flat-square"
+    if [ "$total_security_alerts" -gt 0 ]; then
+      security_badge="https://img.shields.io/badge/security-${total_security_alerts}-red?style=flat-square"
+    fi
+    security_part=" ˙ <a href=\"$url/security\"><img src=\"$security_badge\" alt=\"security\"></a>"
   fi
 
   # Output Card
@@ -181,7 +203,7 @@ echo "$repos" | jq -c '.[]' | while read -r repo; do
       </p>
       <div style="margin-top: 10px;">
         <a href="$url/commits/$branch"><img src="$commit_age_badge" alt="commit"></a> ˙ <a href="$url/pulls"><img src="$pr_badge" alt="prs"></a>$([ -n "$pr_age_short" ] && echo " <img src=\"$pr_age_badge\" alt=\"pr-age\">")<br>
-        <a href="$url/releases"><img src="$rel_badge" alt="release"></a>$([ -n "$rel_age_short" ] && echo " <img src=\"$rel_age_badge\" alt=\"release-age\">") ˙ <a href="$url/security"><img src="$security_badge" alt="security"></a>
+        <a href="$url/releases"><img src="$rel_badge" alt="release"></a>$([ -n "$rel_age_short" ] && echo " <img src=\"$rel_age_badge\" alt=\"release-age\">")$security_part
       </div>
     </td>
 CARD
