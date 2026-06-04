@@ -16,11 +16,32 @@ Last updated: $(date -u +"%Y-%m-%d %H:%M:%S UTC")
 <table border="0" width="100%">
 EOF
 
-# Fetch repos with topic gh-dash
+# Fetch repos with topic gh-dash from user and their orgs
 echo "Searching for repositories with topic 'gh-dash'..." >&2
-repos=$(gh repo list --topic gh-dash --json nameWithOwner,url,defaultBranchRef --limit 100)
+
+# Identify targets: current owner + user's organizations
+owner="${GITHUB_REPOSITORY_OWNER:-}"
+if [ -z "$owner" ]; then
+  owner=$(gh api user --jq '.login' 2>/dev/null || echo "dachrisch")
+fi
+
+orgs=$(gh api user/orgs --jq '.[].login' 2>/dev/null || echo "")
+targets=$(echo -e "$owner\n$orgs" | sort -u | grep -v '^$')
+
+repos="[]"
+for target in $targets; do
+  echo "  - Checking $target..." >&2
+  target_repos=$(gh repo list "$target" --topic gh-dash --json nameWithOwner,url,defaultBranchRef --limit 100 2>/dev/null || echo "[]")
+  repos=$(echo "$repos $target_repos" | jq -s 'add')
+done
+
 count=$(echo "$repos" | jq 'length')
 echo "Found $count repositories." >&2
+
+if [ "$count" -eq 0 ]; then
+  echo "WARNING: No repositories found with topic 'gh-dash'." >&2
+  echo "Check if your token has access to the repositories and if they have the 'gh-dash' topic." >&2
+fi
 
 i=0
 echo "$repos" | jq -c '.[]' | while read -r repo; do
