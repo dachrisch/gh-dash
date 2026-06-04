@@ -21,11 +21,12 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Header
+repo_full_name="${GITHUB_REPOSITORY:-dachrisch/gh-dash}"
 cat <<EOF
 # GitHub Dashboard
 
 Auto-generated overview of repositories tagged with \`gh-dash\`.
-Last updated: $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+[![last updated](https://img.shields.io/github/last-commit/${repo_full_name}?label=last%20updated&style=flat-square)](https://github.com/${repo_full_name}/actions/workflows/update-dash.yml)
 
 <table border="0" width="100%">
 EOF
