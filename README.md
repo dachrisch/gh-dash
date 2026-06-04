@@ -1,7 +1,7 @@
 # GitHub Dashboard
 
 Auto-generated overview of repositories tagged with `gh-dash`.
-Last updated: 2026-06-04 11:19:09 UTC
+Last updated: 2026-06-04 11:52:48 UTC
 
 <table border="0" width="100%">
   <tr>
@@ -14,7 +14,7 @@ Last updated: 2026-06-04 11:19:09 UTC
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/bumbleflies/bricksnbytes/commits/master"><img src="https://img.shields.io/badge/commit-9h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/bricksnbytes/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/bricksnbytes?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/10h-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/bumbleflies/bricksnbytes/commits/master"><img src="https://img.shields.io/badge/commit-10h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/bricksnbytes/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/bricksnbytes?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/10h-gray?style=flat-square" alt="pr-age"><br>
         <a href="https://github.com/bumbleflies/bricksnbytes/releases"><img src="https://img.shields.io/badge/release-none-gray?style=flat-square" alt="release"></a> ˙ <a href="https://github.com/bumbleflies/bricksnbytes/security"><img src="https://img.shields.io/badge/security-none-green?style=flat-square" alt="security"></a>
       </div>
     </td>
@@ -27,7 +27,7 @@ Last updated: 2026-06-04 11:19:09 UTC
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/bumbleflies/web/commits/master"><img src="https://img.shields.io/badge/commit-9h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/web/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/web?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/9h-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/bumbleflies/web/commits/master"><img src="https://img.shields.io/badge/commit-10h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/web/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/web?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/10h-gray?style=flat-square" alt="pr-age"><br>
         <a href="https://github.com/bumbleflies/web/releases"><img src="https://img.shields.io/badge/release-none-gray?style=flat-square" alt="release"></a> ˙ <a href="https://github.com/bumbleflies/web/security"><img src="https://img.shields.io/badge/security-none-green?style=flat-square" alt="security"></a>
       </div>
     </td>
@@ -42,7 +42,7 @@ Last updated: 2026-06-04 11:19:09 UTC
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/gh-dash/commits/main"><img src="https://img.shields.io/badge/commit-just%20now-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/gh-dash/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/gh-dash?label=prs&style=flat-square" alt="prs"></a><br>
+        <a href="https://github.com/dachrisch/gh-dash/commits/main"><img src="https://img.shields.io/badge/commit-33m-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/gh-dash/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/gh-dash?label=prs&style=flat-square" alt="prs"></a><br>
         <a href="https://github.com/dachrisch/gh-dash/releases"><img src="https://img.shields.io/badge/release-none-gray?style=flat-square" alt="release"></a> ˙ <a href="https://github.com/dachrisch/gh-dash/security"><img src="https://img.shields.io/badge/security-none-green?style=flat-square" alt="security"></a>
       </div>
     </td>
@@ -55,7 +55,7 @@ Last updated: 2026-06-04 11:19:09 UTC
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/leaguesphere/commits/master"><img src="https://img.shields.io/badge/commit-1h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/leaguesphere/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/leaguesphere?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/9h-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/dachrisch/leaguesphere/commits/master"><img src="https://img.shields.io/badge/commit-1h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/leaguesphere/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/leaguesphere?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/10h-gray?style=flat-square" alt="pr-age"><br>
         <a href="https://github.com/dachrisch/leaguesphere/releases"><img src="https://img.shields.io/badge/release-v3.25.0-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/1h-gray?style=flat-square" alt="release-age"> ˙ <a href="https://github.com/dachrisch/leaguesphere/security"><img src="https://img.shields.io/badge/security-none-green?style=flat-square" alt="security"></a>
       </div>
     </td>
@@ -70,7 +70,7 @@ Last updated: 2026-06-04 11:19:09 UTC
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/servyy-container/commits/master"><img src="https://img.shields.io/badge/commit-10h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/servyy-container/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/servyy-container?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/3d-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/dachrisch/servyy-container/commits/master"><img src="https://img.shields.io/badge/commit-11h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/servyy-container/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/servyy-container?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/3d-gray?style=flat-square" alt="pr-age"><br>
         <a href="https://github.com/dachrisch/servyy-container/releases"><img src="https://img.shields.io/badge/release-none-gray?style=flat-square" alt="release"></a> ˙ <a href="https://github.com/dachrisch/servyy-container/security"><img src="https://img.shields.io/badge/security-none-green?style=flat-square" alt="security"></a>
       </div>
     </td>
