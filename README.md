@@ -1,7 +1,7 @@
 # GitHub Dashboard
 
 Auto-generated overview of repositories tagged with `gh-dash`.
-Last updated: 2026-06-04 12:38:22 UTC
+[![last updated](https://img.shields.io/github/last-commit/dachrisch/gh-dash?label=last%20updated&style=flat-square)](https://github.com/dachrisch/gh-dash/actions/workflows/update-dash.yml)
 
 <table border="0" width="100%">
   <tr>
@@ -14,7 +14,7 @@ Last updated: 2026-06-04 12:38:22 UTC
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/bumbleflies/bricksnbytes/commits/master"><img src="https://img.shields.io/badge/commit-10h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/bricksnbytes/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/bricksnbytes?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/11h-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/bumbleflies/bricksnbytes/commits/master"><img src="https://img.shields.io/badge/commit-11h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/bricksnbytes/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/bricksnbytes?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/12h-gray?style=flat-square" alt="pr-age"><br>
         <a href="https://github.com/bumbleflies/bricksnbytes/releases"><img src="https://img.shields.io/badge/release-none-gray?style=flat-square" alt="release"></a>
       </div>
     </td>
@@ -27,25 +27,12 @@ Last updated: 2026-06-04 12:38:22 UTC
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/bumbleflies/web/commits/master"><img src="https://img.shields.io/badge/commit-10h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/web/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/web?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/11h-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/bumbleflies/web/commits/master"><img src="https://img.shields.io/badge/commit-11h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/web/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/web?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/11h-gray?style=flat-square" alt="pr-age"><br>
         <a href="https://github.com/bumbleflies/web/releases"><img src="https://img.shields.io/badge/release-none-gray?style=flat-square" alt="release"></a>
       </div>
     </td>
   </tr>
   <tr>
-    <td width="50%" align="left" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 12px;">
-      <a href="https://github.com/dachrisch/gh-dash"><b>dachrisch/gh-dash</b></a><br>
-      <hr style="border: 0; border-top: 1px solid #30363d; margin: 8px 0;">
-      <p style="margin: 12px 0;">
-        <a href="https://github.com/dachrisch/gh-dash/actions">
-          <img src="https://img.shields.io/badge/ACTION-CI RUNNING-yellow?style=for-the-badge" alt="action">
-        </a>
-      </p>
-      <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/gh-dash/commits/main"><img src="https://img.shields.io/badge/commit-40m-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/gh-dash/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/gh-dash?label=prs&style=flat-square" alt="prs"></a><br>
-        <a href="https://github.com/dachrisch/gh-dash/releases"><img src="https://img.shields.io/badge/release-none-gray?style=flat-square" alt="release"></a>
-      </div>
-    </td>
     <td width="50%" align="left" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 12px;">
       <a href="https://github.com/dachrisch/leaguesphere"><b>dachrisch/leaguesphere</b></a><br>
       <hr style="border: 0; border-top: 1px solid #30363d; margin: 8px 0;">
@@ -55,12 +42,10 @@ Last updated: 2026-06-04 12:38:22 UTC
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/leaguesphere/commits/master"><img src="https://img.shields.io/badge/commit-26m-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/leaguesphere/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/leaguesphere?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/26m-gray?style=flat-square" alt="pr-age"><br>
-        <a href="https://github.com/dachrisch/leaguesphere/releases"><img src="https://img.shields.io/badge/release-v3.25.0-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/2h-gray?style=flat-square" alt="release-age">
+        <a href="https://github.com/dachrisch/leaguesphere/commits/master"><img src="https://img.shields.io/badge/commit-50m-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/leaguesphere/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/leaguesphere?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/50m-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/dachrisch/leaguesphere/releases"><img src="https://img.shields.io/badge/release-v3.25.0-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/3h-gray?style=flat-square" alt="release-age">
       </div>
     </td>
-  </tr>
-  <tr>
     <td width="50%" align="left" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 12px;">
       <a href="https://github.com/dachrisch/servyy-container"><b>dachrisch/servyy-container</b></a><br>
       <hr style="border: 0; border-top: 1px solid #30363d; margin: 8px 0;">
@@ -70,10 +55,12 @@ Last updated: 2026-06-04 12:38:22 UTC
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/servyy-container/commits/master"><img src="https://img.shields.io/badge/commit-11h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/servyy-container/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/servyy-container?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/3d-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/dachrisch/servyy-container/commits/master"><img src="https://img.shields.io/badge/commit-12h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/servyy-container/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/servyy-container?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/3d-gray?style=flat-square" alt="pr-age"><br>
         <a href="https://github.com/dachrisch/servyy-container/releases"><img src="https://img.shields.io/badge/release-none-gray?style=flat-square" alt="release"></a>
       </div>
     </td>
+  </tr>
+  <tr>
     <td width="50%" align="left" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 12px;">
       <a href="https://github.com/dachrisch/ai-job-search"><b>dachrisch/ai-job-search</b></a><br>
       <hr style="border: 0; border-top: 1px solid #30363d; margin: 8px 0;">
@@ -87,8 +74,6 @@ Last updated: 2026-06-04 12:38:22 UTC
         <a href="https://github.com/dachrisch/ai-job-search/releases"><img src="https://img.shields.io/badge/release-none-gray?style=flat-square" alt="release"></a>
       </div>
     </td>
-  </tr>
-  <tr>
     <td width="50%" align="left" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 12px;">
       <a href="https://github.com/dachrisch/groceries-order-tracking"><b>dachrisch/groceries-order-tracking</b></a><br>
       <hr style="border: 0; border-top: 1px solid #30363d; margin: 8px 0;">
@@ -102,6 +87,8 @@ Last updated: 2026-06-04 12:38:22 UTC
         <a href="https://github.com/dachrisch/groceries-order-tracking/releases"><img src="https://img.shields.io/badge/release-v1.9.5-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/2d-gray?style=flat-square" alt="release-age">
       </div>
     </td>
+  </tr>
+  <tr>
     <td width="50%" align="left" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 12px;">
       <a href="https://github.com/dachrisch/energy.consumption"><b>dachrisch/energy.consumption</b></a><br>
       <hr style="border: 0; border-top: 1px solid #30363d; margin: 8px 0;">
