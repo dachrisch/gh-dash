@@ -42,7 +42,7 @@ Auto-generated overview of repositories tagged with `gh-dash`.
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/leaguesphere/commits/master"><img src="https://img.shields.io/badge/commit-11m-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/leaguesphere/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/leaguesphere?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/11m-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/dachrisch/leaguesphere/commits/master"><img src="https://img.shields.io/badge/commit-1h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/leaguesphere/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/leaguesphere?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/1h-gray?style=flat-square" alt="pr-age"><br>
         <a href="https://github.com/dachrisch/leaguesphere/releases"><img src="https://img.shields.io/badge/release-v3.25.1-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/1d-gray?style=flat-square" alt="release-age">
       </div>
     </td>
@@ -70,7 +70,7 @@ Auto-generated overview of repositories tagged with `gh-dash`.
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/ai-job-search/commits/master"><img src="https://img.shields.io/badge/commit-2d-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/ai-job-search/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/ai-job-search?label=prs&style=flat-square" alt="prs"></a><br>
+        <a href="https://github.com/dachrisch/ai-job-search/commits/master"><img src="https://img.shields.io/badge/commit-3d-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/ai-job-search/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/ai-job-search?label=prs&style=flat-square" alt="prs"></a><br>
         <a href="https://github.com/dachrisch/ai-job-search/releases"><img src="https://img.shields.io/badge/release-none-gray?style=flat-square" alt="release"></a>
       </div>
     </td>
