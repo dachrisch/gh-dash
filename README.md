@@ -27,7 +27,7 @@ Auto-generated overview of repositories tagged with `gh-dash`.
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/bumbleflies/bricksnbytes/commits/master"><img src="https://img.shields.io/badge/commit-2d-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/bricksnbytes/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/bricksnbytes?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/2d-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/bumbleflies/bricksnbytes/commits/master"><img src="https://img.shields.io/badge/commit-3d-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/bricksnbytes/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/bricksnbytes?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/3d-gray?style=flat-square" alt="pr-age"><br>
         <a href="https://github.com/bumbleflies/bricksnbytes/releases"><img src="https://img.shields.io/badge/release-none-gray?style=flat-square" alt="release"></a>
       </div>
     </td>
@@ -37,13 +37,13 @@ Auto-generated overview of repositories tagged with `gh-dash`.
       <a href="https://github.com/dachrisch/leaguesphere"><b>dachrisch/leaguesphere</b></a><br>
       <hr style="border: 0; border-top: 1px solid #30363d; margin: 8px 0;">
       <p style="margin: 12px 0;">
-        <a href="https://circleci.com/workflow-run/6c18a0ed-c3b3-4ea8-aab0-e8df74377126">
-          <img src="https://img.shields.io/badge/ACTION-APPROVE hold_production-blueviolet?style=for-the-badge" alt="action">
+        <a href="https://github.com/dachrisch/leaguesphere">
+          <img src="https://img.shields.io/badge/ACTION-ALL DONE-green?style=for-the-badge" alt="action">
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/leaguesphere/commits/master"><img src="https://img.shields.io/badge/commit-20h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/leaguesphere/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/leaguesphere?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/1d-gray?style=flat-square" alt="pr-age"><br>
-        <a href="https://github.com/dachrisch/leaguesphere/releases"><img src="https://img.shields.io/badge/release-v3.28.4-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/20h-gray?style=flat-square" alt="release-age">
+        <a href="https://github.com/dachrisch/leaguesphere/commits/master"><img src="https://img.shields.io/badge/commit-21h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/leaguesphere/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/leaguesphere?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/1d-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/dachrisch/leaguesphere/releases"><img src="https://img.shields.io/badge/release-v3.28.4-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/21h-gray?style=flat-square" alt="release-age">
       </div>
     </td>
     <td width="50%" align="left" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 12px;">
