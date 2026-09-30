@@ -14,7 +14,7 @@ Auto-generated overview of repositories tagged with `gh-dash`.
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/bumbleflies/bricksnbytes/commits/master"><img src="https://img.shields.io/badge/commit-6h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/bricksnbytes/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/bricksnbytes?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/6h-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/bumbleflies/bricksnbytes/commits/master"><img src="https://img.shields.io/badge/commit-11h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/bricksnbytes/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/bricksnbytes?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/11h-gray?style=flat-square" alt="pr-age"><br>
         <a href="https://github.com/bumbleflies/bricksnbytes/releases"><img src="https://img.shields.io/badge/release-none-gray?style=flat-square" alt="release"></a>
       </div>
     </td>
@@ -55,8 +55,8 @@ Auto-generated overview of repositories tagged with `gh-dash`.
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/platzler-heid/commits/main"><img src="https://img.shields.io/badge/commit-4h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/platzler-heid/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/platzler-heid?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/4h-gray?style=flat-square" alt="pr-age"><br>
-        <a href="https://github.com/dachrisch/platzler-heid/releases"><img src="https://img.shields.io/badge/release-v1.6.28-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/4h-gray?style=flat-square" alt="release-age">
+        <a href="https://github.com/dachrisch/platzler-heid/commits/main"><img src="https://img.shields.io/badge/commit-10h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/platzler-heid/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/platzler-heid?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/10h-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/dachrisch/platzler-heid/releases"><img src="https://img.shields.io/badge/release-v1.6.28-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/10h-gray?style=flat-square" alt="release-age">
       </div>
     </td>
   </tr>
@@ -70,8 +70,8 @@ Auto-generated overview of repositories tagged with `gh-dash`.
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/leaguesphere/commits/master"><img src="https://img.shields.io/badge/commit-6h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/leaguesphere/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/leaguesphere?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/19h-gray?style=flat-square" alt="pr-age"><br>
-        <a href="https://github.com/dachrisch/leaguesphere/releases"><img src="https://img.shields.io/badge/release-v4.34.0-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/20h-gray?style=flat-square" alt="release-age">
+        <a href="https://github.com/dachrisch/leaguesphere/commits/master"><img src="https://img.shields.io/badge/commit-11h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/leaguesphere/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/leaguesphere?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/1d-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/dachrisch/leaguesphere/releases"><img src="https://img.shields.io/badge/release-v4.34.0-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/1d-gray?style=flat-square" alt="release-age">
       </div>
     </td>
     <td width="50%" align="left" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 12px;">
@@ -83,8 +83,8 @@ Auto-generated overview of repositories tagged with `gh-dash`.
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/dontforget/commits/master"><img src="https://img.shields.io/badge/commit-7h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/dontforget/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/dontforget?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/7h-gray?style=flat-square" alt="pr-age"><br>
-        <a href="https://github.com/dachrisch/dontforget/releases"><img src="https://img.shields.io/badge/release-v0.28.23-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/7h-gray?style=flat-square" alt="release-age">
+        <a href="https://github.com/dachrisch/dontforget/commits/master"><img src="https://img.shields.io/badge/commit-12h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/dontforget/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/dontforget?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/12h-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/dachrisch/dontforget/releases"><img src="https://img.shields.io/badge/release-v0.28.23-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/12h-gray?style=flat-square" alt="release-age">
       </div>
     </td>
   </tr>
@@ -98,8 +98,8 @@ Auto-generated overview of repositories tagged with `gh-dash`.
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/league.finance/commits/master"><img src="https://img.shields.io/badge/commit-7h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/league.finance/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/league.finance?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/7h-gray?style=flat-square" alt="pr-age"><br>
-        <a href="https://github.com/dachrisch/league.finance/releases"><img src="https://img.shields.io/badge/release-v0.10.29-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/7h-gray?style=flat-square" alt="release-age">
+        <a href="https://github.com/dachrisch/league.finance/commits/master"><img src="https://img.shields.io/badge/commit-12h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/league.finance/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/league.finance?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/12h-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/dachrisch/league.finance/releases"><img src="https://img.shields.io/badge/release-v0.10.29-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/12h-gray?style=flat-square" alt="release-age">
       </div>
     </td>
     <td width="50%" align="left" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 12px;">
@@ -111,8 +111,8 @@ Auto-generated overview of repositories tagged with `gh-dash`.
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/groceries-order-tracking/commits/master"><img src="https://img.shields.io/badge/commit-9h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/groceries-order-tracking/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/groceries-order-tracking?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/9h-gray?style=flat-square" alt="pr-age"><br>
-        <a href="https://github.com/dachrisch/groceries-order-tracking/releases"><img src="https://img.shields.io/badge/release-v1.9.175-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/9h-gray?style=flat-square" alt="release-age">
+        <a href="https://github.com/dachrisch/groceries-order-tracking/commits/master"><img src="https://img.shields.io/badge/commit-15h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/groceries-order-tracking/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/groceries-order-tracking?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/15h-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/dachrisch/groceries-order-tracking/releases"><img src="https://img.shields.io/badge/release-v1.9.175-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/15h-gray?style=flat-square" alt="release-age">
       </div>
     </td>
   </tr>
@@ -126,8 +126,8 @@ Auto-generated overview of repositories tagged with `gh-dash`.
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/energy.consumption/commits/main"><img src="https://img.shields.io/badge/commit-9h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/energy.consumption/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/energy.consumption?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/10h-gray?style=flat-square" alt="pr-age"><br>
-        <a href="https://github.com/dachrisch/energy.consumption/releases"><img src="https://img.shields.io/badge/release-v3.16.141-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/9h-gray?style=flat-square" alt="release-age">
+        <a href="https://github.com/dachrisch/energy.consumption/commits/main"><img src="https://img.shields.io/badge/commit-15h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/energy.consumption/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/energy.consumption?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/15h-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/dachrisch/energy.consumption/releases"><img src="https://img.shields.io/badge/release-v3.16.141-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/15h-gray?style=flat-square" alt="release-age">
       </div>
     </td>
     <td width="50%" align="left" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 12px;">
@@ -139,8 +139,8 @@ Auto-generated overview of repositories tagged with `gh-dash`.
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/devhub/commits/master"><img src="https://img.shields.io/badge/commit-22h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/devhub/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/devhub?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/22h-gray?style=flat-square" alt="pr-age"><br>
-        <a href="https://github.com/dachrisch/devhub/releases"><img src="https://img.shields.io/badge/release-v1.30.3-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/22h-gray?style=flat-square" alt="release-age">
+        <a href="https://github.com/dachrisch/devhub/commits/master"><img src="https://img.shields.io/badge/commit-1d-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/devhub/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/devhub?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/1d-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/dachrisch/devhub/releases"><img src="https://img.shields.io/badge/release-v1.30.3-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/1d-gray?style=flat-square" alt="release-age">
       </div>
     </td>
   </tr>
@@ -195,7 +195,7 @@ Auto-generated overview of repositories tagged with `gh-dash`.
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/imoore/commits/main"><img src="https://img.shields.io/badge/commit-27d-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/imoore/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/imoore?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/29d-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/dachrisch/imoore/commits/main"><img src="https://img.shields.io/badge/commit-27d-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/imoore/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/imoore?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/1mo-gray?style=flat-square" alt="pr-age"><br>
         <a href="https://github.com/dachrisch/imoore/releases"><img src="https://img.shields.io/badge/release-none-gray?style=flat-square" alt="release"></a>
       </div>
     </td>
