@@ -42,8 +42,8 @@ Auto-generated overview of repositories tagged with `gh-dash`.
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/bumbleflies/live/commits/master"><img src="https://img.shields.io/badge/commit-1d-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/live/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/live?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/1d-gray?style=flat-square" alt="pr-age"><br>
-        <a href="https://github.com/bumbleflies/live/releases"><img src="https://img.shields.io/badge/release-live--v0.8.13-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/1d-gray?style=flat-square" alt="release-age">
+        <a href="https://github.com/bumbleflies/live/commits/master"><img src="https://img.shields.io/badge/commit-2d-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/bumbleflies/live/pulls"><img src="https://img.shields.io/github/issues-pr/bumbleflies/live?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/2d-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/bumbleflies/live/releases"><img src="https://img.shields.io/badge/release-live--v0.8.13-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/2d-gray?style=flat-square" alt="release-age">
       </div>
     </td>
     <td width="50%" align="left" valign="top" style="border: 1px solid #30363d; border-radius: 6px; padding: 12px;">
@@ -83,7 +83,7 @@ Auto-generated overview of repositories tagged with `gh-dash`.
         </a>
       </p>
       <div style="margin-top: 10px;">
-        <a href="https://github.com/dachrisch/league.finance/commits/master"><img src="https://img.shields.io/badge/commit-22h-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/league.finance/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/league.finance?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/22h-gray?style=flat-square" alt="pr-age"><br>
+        <a href="https://github.com/dachrisch/league.finance/commits/master"><img src="https://img.shields.io/badge/commit-1d-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/league.finance/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/league.finance?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/1d-gray?style=flat-square" alt="pr-age"><br>
         <a href="https://github.com/dachrisch/league.finance/releases"><img src="https://img.shields.io/badge/release-v0.12.49-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/1d-gray?style=flat-square" alt="release-age">
       </div>
     </td>
@@ -224,7 +224,7 @@ Auto-generated overview of repositories tagged with `gh-dash`.
       </p>
       <div style="margin-top: 10px;">
         <a href="https://github.com/dachrisch/sproutlings/commits/master"><img src="https://img.shields.io/badge/commit-3d-green?style=flat-square" alt="commit"></a> ˙ <a href="https://github.com/dachrisch/sproutlings/pulls"><img src="https://img.shields.io/github/issues-pr/dachrisch/sproutlings?label=prs&style=flat-square" alt="prs"></a> <img src="https://img.shields.io/badge/3d-gray?style=flat-square" alt="pr-age"><br>
-        <a href="https://github.com/dachrisch/sproutlings/releases"><img src="https://img.shields.io/badge/release-v1.8.13-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/5d-gray?style=flat-square" alt="release-age">
+        <a href="https://github.com/dachrisch/sproutlings/releases"><img src="https://img.shields.io/badge/release-v1.8.13-blue?style=flat-square" alt="release"></a> <img src="https://img.shields.io/badge/6d-gray?style=flat-square" alt="release-age">
       </div>
     </td>
   </tr>
